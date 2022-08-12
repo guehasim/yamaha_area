@@ -2,7 +2,7 @@
 <div class="wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-10 col-md-offset-1">
                       <div class="col-md-12">
                         <h3>Log Aktivitas</h3>
                       </div>
@@ -65,7 +65,7 @@
                               <?php $no=1; foreach ($log->result() as $ad): ?>                              
                               <tr>
                                 <td style="text-align: center;"><?php echo $no++;?></td>
-                                <td style="text-align: center;"><?php echo date('d M y',strtotime($ad->Tgl));?> <?php echo date('H:i:s a',strtotime($ad->Jam)) ?> </td>
+                                <td style="text-align: center;"><?php echo date('d M y',strtotime($ad->Tgl));?> - <?php echo date('H:i',strtotime($ad->Jam)) ?> </td>
                                 <td style="text-align: center;"><?php echo $ad->Operator;?></td>
                                 <td style="text-align: center;">
                                   <?php if ($ad->image != NULL): ?>

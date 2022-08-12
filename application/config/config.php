@@ -275,6 +275,8 @@ $config['log_file_permissions'] = 0644;
 | codes to set your own date formatting
 |
 */
+
+date_default_timezone_set("Asia/Jakarta");
 $config['log_date_format'] = 'Y-m-d H:i:s';
 
 /*

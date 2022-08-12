@@ -37,15 +37,15 @@ class log extends CI_Controller
 
 			}else if($submit == 'Print PDF'){
 
-				$data['period_awal'] = date('d/m/Y',strtotime($this->input->post('period_awal')));
-				$data['period_akhir'] = date('d/m/Y',strtotime($this->input->post('period_akhir')));
+				$data['period_awal'] = date('m/d/Y',strtotime($this->input->post('period_awal')));
+				$data['period_akhir'] = date('m/d/Y',strtotime($this->input->post('period_akhir')));
 				$data['cetak'] = $this->m_log->lihat_pdf($period_awal,$period_akhir);
 				$this->load->view('log/cetaklog',$data);
 
 			}else if($submit == 'Print Excel'){
 
-				$data['period_awal'] = date('d/m/Y',strtotime($this->input->post('period_awal')));
-				$data['period_akhir'] = date('d/m/Y',strtotime($this->input->post('period_akhir')));
+				$data['period_awal'] = date('m/d/Y',strtotime($this->input->post('period_awal')));
+				$data['period_akhir'] = date('m/d/Y',strtotime($this->input->post('period_akhir')));
 
 				$semua_pengguna = $this->m_log->lihat_pdf($period_awal,$period_akhir);
 
@@ -80,8 +80,8 @@ class log extends CI_Controller
 
 			  $writer->save('php://output');
 			}else if($submit == 'Search'){
-				$data['period_awal'] = date('d/m/Y',strtotime($this->input->post('period_awal')));
-				$data['period_akhir'] = date('d/m/Y',strtotime($this->input->post('period_akhir')));
+				$data['period_awal'] = date('m/d/Y',strtotime($this->input->post('period_awal')));
+				$data['period_akhir'] = date('m/d/Y',strtotime($this->input->post('period_akhir')));
 				$this->load->view('template/admin_1');
 				$data['log'] = $this->m_log->lihat_pdf($period_awal,$period_akhir);
 				$this->load->view('log/index',$data);

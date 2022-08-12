@@ -367,7 +367,7 @@
                     <?php $no=1; foreach ($cetak->result() as $ad): ?>
                     <tr>
                         <td style="text-align:center;"><?php echo $no++;?></td>
-                        <td style="text-align:center;"><?php echo date('d M y',strtotime($ad->Tgl));?> <?php echo date('h:i:s',strtotime($ad->Jam)) ?></td>
+                        <td style="text-align:center;"><?php echo date('d M y',strtotime($ad->Tgl));?> - <?php echo date('h:i',strtotime($ad->Jam)) ?></td>
                         <td style="text-align:center;"><?php echo $ad->Operator;?></td>
                         <td style="text-align:left;">Item <?php echo $ad->item;?> di <?php echo $ad->nama;?> <?php echo $ad->Ket;?></td>
                     </tr>    
